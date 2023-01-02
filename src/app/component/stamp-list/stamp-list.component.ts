@@ -10,7 +10,7 @@ import { StampyService } from 'src/app/service/stampy.service';
 })
 export class StampListComponent {
 
-  private stamps$: Observable<Stamp[]>;
+  stamps$: Observable<Stamp[]>;
 
   constructor(private stampService: StampyService) {
     this.stamps$ = this.stampService.getStamps();
