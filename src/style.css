@@ -1,0 +1,29 @@
+html, body {
+  height: 100%; 
+  font-family: Roboto; 
+}
+
+body {
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.container {
+  width: 600px;
+}
+
+.centre {
+  display: flex;
+  justify-content: center;
+}
+
+.padding-medium {
+  padding: 8px;
+}
