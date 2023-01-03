@@ -14,7 +14,7 @@ describe('StampyClientService', () => {
     service = TestBed.get(StampyClientService);
   });
 
-  it('get stamps makes get request to /api/stamps', (done) => {
+  it('get stamps makes get request to /api/stamps', done => {
     service.getStamps().subscribe(stamps => {
       expect(stamps.length).toEqual(1);
       expect(stamps[0].id).toEqual(1);
@@ -23,15 +23,14 @@ describe('StampyClientService', () => {
     });
 
     let request = httpMock.expectOne('/api/stamps')
+    request.flush([new Stamp(1, 'DC Collection - Alfred')]);
 
     expect(request.request.method).toEqual('GET');
-
-    request.flush([new Stamp(1, 'DC Collection - Alfred')]);
 
     httpMock.verify();
   });
 
-  it('add stamp makes post request to /api/stamps', (done) => {
+  it('add stamp makes post request to /api/stamps', done => {
     service.addStamp('DC Collection - Batwomen').subscribe(stamp => {
       expect(stamp.id).toEqual(1);
       expect(stamp.name).toEqual('DC Collection - Batwomen');
@@ -39,11 +38,10 @@ describe('StampyClientService', () => {
     });
 
     let request = httpMock.expectOne('/api/stamps')
+    request.flush(new Stamp(1, 'DC Collection - Batwomen'));
 
     expect(request.request.method).toEqual('POST');
     expect(request.request.body).toEqual({name: 'DC Collection - Batwomen'});
-
-    request.flush(new Stamp(1, 'DC Collection - Batwomen'));
 
     httpMock.verify();
   });
