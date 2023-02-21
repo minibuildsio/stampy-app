@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { StampyService } from 'src/app/service/stampy.service';
+import { StampyStateService } from 'src/app/service/stampy.service';
 
 import { StampListComponent } from './stamp-list.component';
 
@@ -12,7 +12,7 @@ describe('StampListComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ StampListComponent ],
       providers: [
-        {provide: StampyService, useValue: stampyService}
+        {provide: StampyStateService, useValue: stampyService}
       ]
     })
     .compileComponents();

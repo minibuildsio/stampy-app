@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StampyService } from 'src/app/service/stampy.service';
+import { StampyStateService } from 'src/app/service/stampy.service';
 
 @Component({
   selector: 'app-stamp-input',
@@ -10,7 +10,7 @@ export class StampInputComponent {
 
   stampName: string = ''; 
 
-  constructor(private stampyService: StampyService) { }
+  constructor(private stampyService: StampyStateService) { }
 
   addStamp() {
     this.stampyService.addStamp(this.stampName);

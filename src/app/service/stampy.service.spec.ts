@@ -3,11 +3,11 @@ import { of } from 'rxjs';
 import { Stamp } from '../model';
 import { StampyClientService } from './stampy-client.service';
 
-import { StampyService } from './stampy.service';
+import { StampyStateService } from './stampy.service';
 
 describe('StampyService', () => {
   let stampyClient = jasmine.createSpyObj('StampyClientService', ['getStamps', 'addStamp']);
-  let service: StampyService;
+  let service: StampyStateService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -15,7 +15,7 @@ describe('StampyService', () => {
     });
 
     stampyClient.getStamps.and.returnValue(of([]));
-    service = TestBed.get(StampyService);
+    service = TestBed.get(StampyStateService);
   });
 
   it('loading stamps notifies observers', (done) => {

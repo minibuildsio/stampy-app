@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { StampyService } from 'src/app/service/stampy.service';
+import { StampyStateService } from 'src/app/service/stampy.service';
 
 import { StampInputComponent } from './stamp-input.component';
 import { StampInputModule } from './stamp-input.module';
@@ -15,7 +15,7 @@ describe('StampInputComponent', () => {
       imports: [ FormsModule ],
       declarations: [ StampInputComponent ],
       providers: [
-        {provide: StampyService, useValue: stampyService}
+        {provide: StampyStateService, useValue: stampyService}
       ]
     })
     .compileComponents();

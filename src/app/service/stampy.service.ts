@@ -6,7 +6,7 @@ import { StampyClientService } from './stampy-client.service';
 @Injectable({
   providedIn: 'root'
 })
-export class StampyService {
+export class StampyStateService {
 
   private stamps$: BehaviorSubject<Stamp[]> = new BehaviorSubject<Stamp[]>([]);
 
@@ -23,7 +23,8 @@ export class StampyService {
   }
 
   addStamp(name: string) {
-    this.client.addStamp(name).subscribe(stamp => this.stamps$.next(this.stamps$.getValue().concat([stamp])));
+    this.client.addStamp(name)
+      .subscribe(stamp => this.stamps$.next(this.stamps$.getValue().concat([stamp])));
   }
 
 }
