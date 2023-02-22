@@ -12,9 +12,9 @@ jobs:
 
     - name: NPM install
       run: npm install
-    
-    - name: Build
-      run: npm run build -- --configuration production
 
     - name: Test
       run: npm run test -- --browsers=ChromeHeadless --watch=false
+
+    - name: Build
+      run: npm run build -- --configuration production
